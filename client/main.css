@@ -1,0 +1,21 @@
+.board
+{
+	width: 70%;
+	border: 5px;
+	padding: 10px;
+    background-color: rgb(203, 247, 230);
+}
+.column
+{
+	width: 30%;
+	border: 5px;
+	padding: 10px;
+    background-color: rgb(248, 212, 232);
+}
+.card
+{
+	width: 10%;
+	border: 5px;
+	padding: 10px;
+    background-color: rgb(226, 241, 170);
+}

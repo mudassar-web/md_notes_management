@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Registration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <h3 class="column">Register to MD Notes Management</h3>
+  <form>
+    <div id="register" class="board">
+      <b>Username: </b>
+      <br>
+      <input type="text" placeholder="Enter Username" name="uname" id="uname" required>
+      <br>
+      <b>Password: </b>
+      <br>
+      <input type="password" placeholder="Enter Password" name="pwd" id="pwd" required>
+      <br>
+      <br>
+      <input type="button" name="btn_sumbit" value="Register" onclick="registercheck()">
+      <input type="button" name="btn_cancel" value="Cancel" onclick="window.location.href='register.html'">
+      <br>
+      <span id="lblmsg"></span>
+      <br>
+      <span>Already registered
+        <a href="login.html">Login</a>
+      </span>
+    </div>
+  </form>
+  <br>
+  <div id="footer" class="column">
+    MD Notes Management &copy; 2021 Mudassar Ansari
+  </div>
+  <script src="./scripts/login.js"></script>
+</body>
+
+</html>

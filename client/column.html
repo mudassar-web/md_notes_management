@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Columns</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./main.css" />
+    
+</head>
+
+<body onload="showColumn()">
+    <h2>MD Notes Management</h2>
+    <h5><a href="login.html">Logout</a> | <a href="#" onclick="window.history.back()">Boards</a></h5>
+    <input type="text" id="colname" placeholder="Enter Column Name" width="100">
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const uid = urlParams.get('uid');
+        const bid = urlParams.get('bid');
+        // document.write("<a href=\"index.html?uid=" + uid + "\">Create New Board</a>");
+        document.write("<button onclick=\"addColumn('" + bid + "')\">Add Column</button>");
+    </script>
+
+    <span id="lblmsg"></span>
+
+    <h3>Columns</h3>
+    
+    <div id='previewbox'>
+
+    </div>
+    <script src="./scripts/preview.js"></script>
+    <script src="./scripts/dashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Boards</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./main.css" />
+    
+</head>
+
+<body onload="showPreview()">
+    <h2>MD Notes Management</h2>
+    <h5><a href="login.html">Logout</a></h5>
+    <input type="text" id="boardname" placeholder="Enter Board Name" width="100">
+    <input type="text" id="desc" placeholder="Enter Description" width="100">
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const uid = urlParams.get('uid');   
+       // document.write("<a href=\"index.html?uid=" + uid + "\">Create New Board</a>");
+        document.write("<button onclick=\"addBoard('"+uid+"')\">Add Board</button>");
+    </script>
+    
+    <span id="lblmsg"></span>
+
+    <!--Sharing-->
+
+    <h3>Boards</h3>
+    <div id='previewbox'>
+        
+    </div>
+    <div id='previewsharebox'>
+        
+    </div>
+    <script src="./scripts/preview.js"></script>
+    <script src="./scripts/dashboard.js"></script>
+</body>
+
+</html>
