@@ -38,7 +38,7 @@ function showSharing() {
 	request.onloadend = function () {
 
 		if (request.status >= 200 && request.status < 400) {
-			var boardData = JSON.parse(this.response) //json.parse()		
+			var boardData = JSON.parse(this.response) 		
 
 			boardData.map((board) => {
 				displayShareBoard(board)
@@ -57,7 +57,7 @@ function displayBoard(boardObject) {
 	document.getElementsByTagName("div")[0].appendChild(element);
 
 	let a = document.createElement("a");
-	a.href = "column.html?uid=" + boardObject.uid + "&bid=" + boardObject._id //+"&bn=" + boardObject.bname
+	a.href = "column.html?uid=" + boardObject.uid + "&bid=" + boardObject._id 
 	a.innerHTML = boardObject.bname
 	element.append(a);
 
@@ -86,8 +86,6 @@ function shareBoard(bid) {
 
 	if (!shareuser) { return }
 
-	//alert(bid+"---"+shareuser);
-	//api
 	const share = { bid: bid, uname: shareuser }
 
 	var request = new XMLHttpRequest()
@@ -104,7 +102,6 @@ function shareBoard(bid) {
 		}
 	}
 	request.send(JSON.stringify(share))
-	//api end
 }
 
 function displayShareBoard(boardObject) {
@@ -114,44 +111,20 @@ function displayShareBoard(boardObject) {
 	document.getElementsByTagName("div")[0].appendChild(element);
 
 	let a = document.createElement("a");
-	a.href = "column.html?uid=" + boardObject.uid + "&bid=" + boardObject._id //+"&bn=" + boardObject.bname
+	a.href = "column.html?uid=" + boardObject.uid + "&bid=" + boardObject._id 
 	a.innerHTML = boardObject.bname
-	element.append(a);
-
-	/*let b = document.createElement("button");
-	b.innerHTML = "Delete";
-	let str1 = "deleteBoard('" + boardObject._id + "')";
-	//console.log(str1);
-	b.setAttribute("onClick", str1);
-	element.append(b);
-
-	let t = document.createElement("input");
-	t.type = "text";
-	t.placeholder="Enter username to share"
-	let tid='sh'+boardObject._id;
-	//alert(tid)
-	t.id = tid
-	element.append(t);
-
-	let b1 = document.createElement("button");
-	b1.innerHTML = "Share";
-	let str2 ="shareBoard('" + boardObject._id + "')";
-	//console.log(str2);
-	b1.setAttribute("onClick", str2);
-	element.append(b1);*/
+	element.append(a);	
 }
 
 function showColumn() {
 	const urlParams = new URLSearchParams(window.location.search);
 	const uid = urlParams.get('uid');
 	const bid = urlParams.get('bid');
-	//const bn = urlParams.get('bn');
 
 	displayColumn(bid);
 }
 
 function displayColumn(boardId) {
-	//api call
 	const bid = { bid: boardId }
 
 	var request = new XMLHttpRequest()
@@ -178,7 +151,6 @@ function displayColumn(boardId) {
 				let b = document.createElement("button");
 				b.innerHTML = "Delete";
 				let str1 = "deleteColumn('" + col._id + "')";
-				//console.log(str1);
 				b.setAttribute("onClick", str1);
 				element.append(b);
 			})
@@ -209,8 +181,7 @@ function displayCard(colId) {
 	request.onloadend = function () {
 
 		if (request.status >= 200 && request.status < 400) {
-			var cardData = JSON.parse(this.response) //json.parse()
-			console.log(cardData)
+			var cardData = JSON.parse(this.response)	
 
 			cardData.map((card) => {
 				var element = document.createElement('div');
@@ -225,7 +196,6 @@ function displayCard(colId) {
 				let b = document.createElement("button");
 				b.innerHTML = "Delete";
 				let str1 = "deleteCard('" + card._id + "')";
-				//console.log(str1);
 				b.setAttribute("onClick", str1);
 				element.append(b);
 			})
@@ -247,7 +217,6 @@ function deleteBoard(boardId) {
 	request.onloadend = function () {
 		if (request.status >= 200 && request.status < 400) {
 			var data = JSON.parse(this.response)
-			//alert(data)
 			document.getElementById("lblmsg").innerHTML = "Board Deleted";
 		} else {
 			document.getElementById("lblmsg").innerHTML = "Error";
@@ -257,7 +226,6 @@ function deleteBoard(boardId) {
 }
 
 function deleteColumn(colId) {
-	//api call
 	const cid = { cid: colId }
 
 	var request = new XMLHttpRequest()
@@ -267,7 +235,6 @@ function deleteColumn(colId) {
 	request.onloadend = function () {
 		if (request.status >= 200 && request.status < 400) {
 			var data = JSON.parse(this.response)
-			//alert(data)
 			document.getElementById("lblmsg").innerHTML = "Column Deleted";
 		} else {
 			document.getElementById("lblmsg").innerHTML = "Error";
@@ -287,7 +254,6 @@ function deleteCard(cardId) {
 	request.onloadend = function () {
 		if (request.status >= 200 && request.status < 400) {
 			var data = JSON.parse(this.response)
-			//alert(data)
 			document.getElementById("lblmsg").innerHTML = "Card Deleted";
 		} else {
 			document.getElementById("lblmsg").innerHTML = "Error";

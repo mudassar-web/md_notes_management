@@ -88,7 +88,6 @@ app.post('/addcards', async (req, res) => {
     }
 })
 
-//let allb = await boardModel.find({ 'uid': req.body.uid }).to
 app.post('/showboards', async (req, res) => {
     try {
         let board = await boardModel.find({ 'uid': req.body.uid })

@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Columns</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="./main.css" />
-    
+    <link rel="stylesheet" type="text/css" media="screen" href="./main.css" />    
 </head>
 
 <body onload="showColumn()">
@@ -18,7 +17,6 @@
         const urlParams = new URLSearchParams(window.location.search);
         const uid = urlParams.get('uid');
         const bid = urlParams.get('bid');
-        // document.write("<a href=\"index.html?uid=" + uid + "\">Create New Board</a>");
         document.write("<button onclick=\"addColumn('" + bid + "')\">Add Column</button>");
     </script>
 

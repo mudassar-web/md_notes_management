@@ -3,15 +3,14 @@ function addBoard(uid) {
 	let desc = document.getElementById("desc").value;
 
 	if (!bname && !desc) { return }
-	//api
+	
 	const board = { bname: bname, desc: desc, uid: uid }
 
 	var request = new XMLHttpRequest()
 
 	request.open('POST', 'http://localhost:3000/addboard', true)
 	request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-	request.onloadend = function () {
-		//json.parse()		
+	request.onloadend = function () {			
 		if (request.status >= 200 && request.status < 400) {
 			var data = JSON.parse(this.response)
 			document.getElementById("lblmsg").innerHTML = bname + " added.";
@@ -20,14 +19,13 @@ function addBoard(uid) {
 		}
 	}
 	request.send(JSON.stringify(board))
-	//api end
 }
 
 function addColumn(boardId) {
 	let colName = document.getElementById("colname").value;
 
 	if (!colName) { return }
-	//api call
+	
 	const column = { colname: colName, bid: boardId }
 
 	var request = new XMLHttpRequest()
@@ -37,7 +35,7 @@ function addColumn(boardId) {
 	request.onloadend = function () {
 
 		if (request.status >= 200 && request.status < 400) {
-			var data = JSON.parse(this.response) //json.parse()
+			var data = JSON.parse(this.response) 
 
 			document.getElementById("lblmsg").innerHTML = data.colname + " added.";
 
@@ -48,7 +46,6 @@ function addColumn(boardId) {
 		}
 	}
 	request.send(JSON.stringify(column))
-	//api end
 }
 
 function addCard(colId) {
@@ -64,13 +61,11 @@ function addCard(colId) {
 	request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 	request.onloadend = function () {
 		if (request.status >= 200 && request.status < 400) {
-			var data = JSON.parse(this.response) //json.parse()
+			var data = JSON.parse(this.response) 
 			document.getElementById("lblmsg").innerHTML = data.cardname + " added.";
-		} else {
-			//console.log('error')
+		} else {			
 			document.getElementById("lblmsg").innerHTML = "Error in Card creation";
 		}
 	}
-	request.send(JSON.stringify(card))
-	//api end	
+	request.send(JSON.stringify(card))		
 }

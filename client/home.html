@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Boards</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="./main.css" />
-    
+    <link rel="stylesheet" type="text/css" media="screen" href="./main.css" />    
 </head>
 
 <body onload="showPreview()">
@@ -17,19 +16,15 @@
     <input type="text" id="desc" placeholder="Enter Description" width="100">
     <script>
         const urlParams = new URLSearchParams(window.location.search);
-        const uid = urlParams.get('uid');   
-       // document.write("<a href=\"index.html?uid=" + uid + "\">Create New Board</a>");
+        const uid = urlParams.get('uid');
         document.write("<button onclick=\"addBoard('"+uid+"')\">Add Board</button>");
     </script>
-    
     <span id="lblmsg"></span>
-
-    <!--Sharing-->
-
     <h3>Boards</h3>
     <div id='previewbox'>
         
     </div>
+    <!--Sharing-->
     <div id='previewsharebox'>
         
     </div>
