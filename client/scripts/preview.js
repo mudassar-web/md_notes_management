@@ -218,6 +218,7 @@ function deleteBoard(boardId) {
 		if (request.status >= 200 && request.status < 400) {
 			var data = JSON.parse(this.response)
 			document.getElementById("lblmsg").innerHTML = "Board Deleted";
+			window.location.reload()
 		} else {
 			document.getElementById("lblmsg").innerHTML = "Error";
 		}
@@ -236,6 +237,7 @@ function deleteColumn(colId) {
 		if (request.status >= 200 && request.status < 400) {
 			var data = JSON.parse(this.response)
 			document.getElementById("lblmsg").innerHTML = "Column Deleted";
+			window.location.reload()
 		} else {
 			document.getElementById("lblmsg").innerHTML = "Error";
 		}
@@ -255,6 +257,7 @@ function deleteCard(cardId) {
 		if (request.status >= 200 && request.status < 400) {
 			var data = JSON.parse(this.response)
 			document.getElementById("lblmsg").innerHTML = "Card Deleted";
+			window.location.reload()
 		} else {
 			document.getElementById("lblmsg").innerHTML = "Error";
 		}

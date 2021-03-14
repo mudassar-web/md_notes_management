@@ -13,7 +13,8 @@ function addBoard(uid) {
 	request.onloadend = function () {			
 		if (request.status >= 200 && request.status < 400) {
 			var data = JSON.parse(this.response)
-			document.getElementById("lblmsg").innerHTML = bname + " added.";
+			document.getElementById("lblmsg").innerHTML = bname + " added.@@@@";
+			window.location.reload()
 		} else {
 			document.getElementById("lblmsg").innerHTML = "Error Duplicate Name";
 		}
@@ -38,7 +39,7 @@ function addColumn(boardId) {
 			var data = JSON.parse(this.response) 
 
 			document.getElementById("lblmsg").innerHTML = data.colname + " added.";
-
+			window.location.reload()
 		} else {
 
 			console.log('error')
@@ -63,6 +64,7 @@ function addCard(colId) {
 		if (request.status >= 200 && request.status < 400) {
 			var data = JSON.parse(this.response) 
 			document.getElementById("lblmsg").innerHTML = data.cardname + " added.";
+			window.location.reload()
 		} else {			
 			document.getElementById("lblmsg").innerHTML = "Error in Card creation";
 		}
