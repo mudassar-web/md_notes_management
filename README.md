@@ -13,8 +13,6 @@ First time user need to be register. Click on given link below login box
 
 After registration user will be redirected to homepage
 
-*[Note: After every insert, delete and sharing we need to refresh the webpage to see the preview]*
-
 In homepage user can create a new board by entering board name and description then click on “add board” button and preview will be displayed
 
 New board preview will be shown, user can click the board name to add column in particular board
