@@ -32,3 +32,11 @@ User who is owner of a board can share his/her board with other users
 Sharing of board with others user is available on homepage in each preview board there is textbox where user can add other username and click on “share” button
 
 When other user logged in they will find the shared board on the homepage, thus other user can add new columns and cards to that board
+
+## Authors
+
+- [@mudassar-web](https://github.com/mudassar-web)
+
+## License
+
+[MIT License](LICENSE)
